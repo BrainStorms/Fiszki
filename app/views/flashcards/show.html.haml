@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Question:
+  = @flashcard.question
+%p
+  %b Answer:
+  = @flashcard.answer
+
+= link_to 'Edit', edit_flashcard_path(@flashcard)
+\|
+= link_to 'Back', flashcards_path
