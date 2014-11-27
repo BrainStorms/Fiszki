@@ -1,13 +1,23 @@
 = form_for @flashcard, html: { class: "form form-horizontal flashcard" } do |f|
-  .form-group
-    = f.label :question, class: 'control-label'
-    .controls
-      = f.text_field :question, class: 'form-control'
-    = error_span(@flashcard[:question])
-  .form-group
-    = f.label :answer, class: 'control-label'
-    .controls
-      = f.text_field :answer, class: 'form-control'
-    = error_span(@flashcard[:answer])
-  = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), flashcards_path, :class => 'btn btn-default'
+	-if @flashcard.errors.any?
+		#error_explanation
+			%h2
+				=pluralize(@flashcard.errors.count, "error")
+				prohibited this post from being saved:
+	 
+			%ul
+				-@flashcard.errors.full_messages.each do |msg|
+					%li= msg
+
+	.form-group
+		= f.label :question, class: 'control-label'
+	.controls
+		= f.text_field :question, class: 'form-control'
+		= error_span(@flashcard[:question])
+	.form-group
+		= f.label :answer, class: 'control-label'
+	.controls
+		= f.text_field :answer, class: 'form-control'
+	= error_span(@flashcard[:answer])
+	= f.submit nil,class: 'btn btn-primary'
+	= link_to t('.cancel', :default => t("helpers.links.cancel")), flashcards_path, :class => 'btn btn-default'
