@@ -5,6 +5,17 @@ class FlashcardsControllerTest < ActionController::TestCase
     @flashcard = flashcards(:one)
   end
 
+  test "should_not_create_flashcard_with_blank_attributes" do
+    @flashcard = Flashcard.new
+    assert_not @flashcard.save
+    @flashcard.answer = "MyString"
+    assert_not @flashcard.save
+    @flashcard.question = "MyString"
+    @flashcard.answer = ""
+    assert_not @flashcard.save
+  end
+
+
   test "should get index" do
     get :index
     assert_response :success
