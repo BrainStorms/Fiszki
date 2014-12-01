@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :exams
+  resources :flashcard_sets
 
   devise_for :users
   root 'flashcards#index'

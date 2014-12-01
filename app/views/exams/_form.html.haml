@@ -1,8 +1,0 @@
-= form_for @exam, html: { class: "form form-horizontal exam" } do |f|
-  .form-group
-    = f.label :title, class: 'control-label'
-    .controls
-      = f.text_field :title, class: 'form-control', required: true
-    = error_span(@exam[:title])
-  = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), exams_path, :class => 'btn btn-default'

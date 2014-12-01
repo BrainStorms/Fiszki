@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @flashcard_set.title
+
+= link_to 'Edit', edit_flashcard_set_path(@flashcard_set)
+\|
+= link_to 'Back', flashcard_sets_path

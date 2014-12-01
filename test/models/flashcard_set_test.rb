@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ExamTest < ActiveSupport::TestCase
+class FlashcardSetTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

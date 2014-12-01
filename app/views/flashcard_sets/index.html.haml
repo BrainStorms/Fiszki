@@ -1,0 +1,19 @@
+%h1 Listing flashcard_sets
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @flashcard_sets.each do |flashcard_set|
+    %tr
+      %td= flashcard_set.title
+      %td= link_to 'Show', flashcard_set
+      %td= link_to 'Edit', edit_flashcard_set_path(flashcard_set)
+      %td= link_to 'Destroy', flashcard_set, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Flashcard set', new_flashcard_set_path
