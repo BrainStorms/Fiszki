@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :flashcard_sets
+  get 'flashcard_sets/:id/quiz' => 'flashcard_set#quiz'
 
   devise_for :users
   root 'flashcards#index'
 
   resources :flashcards
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

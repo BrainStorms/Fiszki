@@ -1,10 +1,14 @@
 class FlashcardSetsController < ApplicationController
-  before_action :set_flashcard_set, only: [:show, :edit, :update, :destroy]
+  before_action :set_flashcard_set, only: [:quiz, :show, :edit, :update, :destroy]
 
   # GET /flashcards
   # GET /flashcards.json
   def index
     @flashcard_sets = FlashcardSet.all
+  end
+
+  # GET /flashcard_sets/1/quiz
+  def quiz
   end
 
   # GET /flashcard_sets/1
@@ -69,6 +73,6 @@ class FlashcardSetsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def flashcard_set_params
-    params.require(:flashcard_set).permit(:question, :answer)
+    params.require(:flashcard_set).permit(:title)
   end
 end

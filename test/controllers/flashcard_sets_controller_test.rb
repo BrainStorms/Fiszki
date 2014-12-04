@@ -5,6 +5,11 @@ class FlashcardSetsControllerTest < ActionController::TestCase
     @flashcard_set = flashcard_sets(:one)
   end
 
+  test "should_not_create_set_without_title" do
+    @flashcard_set = flashcard_sets(:without_title)
+    assert_not @flashcard_set.save
+  end
+
   test "should get index" do
     get :index
     assert_response :success

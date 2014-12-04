@@ -7,3 +7,12 @@ one:
 two:
   question: MyString
   answer: MyString
+
+empty: {}
+
+without_answer:
+  question: MyString
+
+without_question:
+  answer: MyString
+

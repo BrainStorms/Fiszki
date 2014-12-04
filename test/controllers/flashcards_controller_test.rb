@@ -6,21 +6,17 @@ class FlashcardsControllerTest < ActionController::TestCase
   end
 
   test "should_not_create_flashcard_with_blank_attributes" do
-    @flashcard = Flashcard.new
+    @flashcard = flashcards(:empty)
     assert_not @flashcard.save
   end
 
   test "should_not_create_flashcard_with_blank_question" do
-    @flashcard = Flashcard.new
-    @flashcard.question = ""
-    @flashcard.answer = "MyString"
+    @flashcard = flashcards(:without_question)
     assert_not @flashcard.save
   end
 
   test "should_not_create_flashcard_with_blank_answer" do
-    @flashcard = Flashcard.new
-    @flashcard.question = "MyString"
-    @flashcard.answer = ""
+    @flashcard = flashcards(:without_answer)
     assert_not @flashcard.save
   end
 
