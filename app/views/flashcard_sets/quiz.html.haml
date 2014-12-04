@@ -1,0 +1,18 @@
+%p
+  %b Title:
+  = @flashcard_set.title
+
+#quizContainer
+  #question
+  #answer
+  %a#true
+    OK
+  %a#false
+    dunno :(
+
+:javascript
+  $(document).ready(function() {
+    quizJSON = [{"question":"2+2", "answer":"4"}, {"question":"3*17", "answer":"51"}];
+    var quiz = new FlashcardsQuiz(quizJSON, $('#quizContainer'), $("#question"), $("#answer"), $("#true"), $("#false"));
+    quiz.show();
+  });
