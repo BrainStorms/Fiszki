@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141127074919) do
 
-  create_table "exams", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "flashcard_sets", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
