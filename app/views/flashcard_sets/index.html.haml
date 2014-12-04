@@ -1,19 +1,21 @@
-%h1 Listing flashcard_sets
-
-%table
-  %tr
-    %th Title
-    %th
-    %th
-    %th
-
-  - @flashcard_sets.each do |flashcard_set|
+- model_class = FlashcardSet
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= flashcard_set.title
-      %td= link_to 'Show', flashcard_set
-      %td= link_to 'Edit', edit_flashcard_set_path(flashcard_set)
-      %td= link_to 'Destroy', flashcard_set, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @flashcard_sets.each do |flashcard_set|
+      %tr
+        %td= link_to flashcard_set.id, flashcard_set_path(flashcard_set)
+        %td= flashcard_set.title
+        %td=l flashcard_set.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_flashcard_set_path(flashcard_set), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), flashcard_set_path(flashcard_set), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Flashcard set', new_flashcard_set_path
+= link_to t('.new', :default => t("helpers.links.new")), new_flashcard_set_path, :class => 'btn btn-primary'
