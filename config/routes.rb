@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :flashcard_sets
-  get 'flashcard_sets/:id/quiz' => 'flashcard_set#quiz'
+  get 'flashcard_sets/:id/quiz' => 'flashcard_sets#quiz'
 
   devise_for :users
   root 'flashcards#index'
