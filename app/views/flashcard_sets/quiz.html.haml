@@ -12,7 +12,10 @@
 
 :javascript
   $(document).ready(function() {
-    quizJSON = [{"question":"2+2", "answer":"4"}, {"question":"3*17", "answer":"51"}];
+    var quizJSON = #{
+      a = @flashcard_set.flashcards.to_a.map {|x| '{"question":"'+x.question.to_s + '","' + 'answer":"' + x.answer.to_s+'"}'}
+      "[" + a.join(",") + "]"
+    }
     var quiz = new FlashcardsQuiz(quizJSON, $('#quizContainer'), $("#question"), $("#answer"), $("#true"), $("#false"));
     quiz.show();
   });
