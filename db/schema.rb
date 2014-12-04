@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127074919) do
+ActiveRecord::Schema.define(version: 20141204081056) do
 
   create_table "flashcard_sets", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flashcard_id"
   end
 
   create_table "flashcards", force: true do |t|

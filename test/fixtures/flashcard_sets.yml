@@ -5,3 +5,5 @@ one:
 
 two:
   title: MyString
+
+without_title: {}
