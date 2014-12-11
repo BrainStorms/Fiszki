@@ -1,14 +1,20 @@
-%p
-  %b Title:
+%h1
   = @flashcard_set.title
 
 #quizContainer
-  #question
-  #answer
-  %a#true
-    OK
-  %a#false
-    dunno :(
+  .panel.panel-primary
+    .panel-heading
+      %h1{:style => "text-align:center;"}
+        %a#question{:style => "color:#fff;", :data => {:toggle=>"collapse", :target=>"#collapseAnswer"}, :aria => {:expanded=>"true", :controls=>"demo"}}
+    #collapseAnswer.panel-collapse.collapse
+      .panel-body
+        %h1#answer{:style => "text-align:center;"}
+        %div{:style => "text-align:center;"}
+          %a.btn.btn-danger.btn-lg#false
+            %span.glyphicon.glyphicon-remove{:aria => {:hidden => "true"}}
+          %a.btn.btn-success.btn-lg#true
+            %span.glyphicon.glyphicon-ok{:aria => {:hidden => "true"}}
+
 
 :javascript
   $(document).ready(function() {

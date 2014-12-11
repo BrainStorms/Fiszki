@@ -33,6 +33,7 @@ if (typeof jQuery === 'undefined') { throw new Error('App\'s JavaScript requires
             if(this.index < this.quizJSON.length) {
                 this.questionContainer.html(quizJSON[this.index].question)
                 this.answerContainer.html(quizJSON[this.index].answer)
+                this.answerContainer.closest(".collapse").removeClass("in")
             } else {
                 percentGood = (100 * this.goodAnswersCounter) / quizJSON.length;
                 percentBad = 100 - percentGood;
