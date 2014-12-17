@@ -7,7 +7,7 @@
   %br
   = @flashcard_set.title
 
-
+= link_to "Quiz", "/flashcard_sets/#{@flashcard_set.id}/quiz", :class => 'btn btn-primary'
 = link_to t('.back', :default => t("helpers.links.back")), flashcard_sets_path, :class => 'btn btn-default'
 = link_to t('.edit', :default => t("helpers.links.edit")), edit_flashcard_set_path(@flashcard_set), :class => 'btn btn-default'
 = link_to t('.destroy', :default => t("helpers.links.destroy")), flashcard_set_path(@flashcard_set), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
