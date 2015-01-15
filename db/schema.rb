@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141204085128) do
 
   create_table "exams", force: true do |t|
@@ -19,15 +18,11 @@ ActiveRecord::Schema.define(version: 20141204085128) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-=======
-ActiveRecord::Schema.define(version: 20141204081056) do
->>>>>>> 5f2bfa10f588e3a18bbbbf93b03f6b4bc60a6bfa
 
   create_table "flashcard_sets", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "flashcard_id"
   end
 
   create_table "flashcards", force: true do |t|
